@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="emiteAlerta()">Clique Aqui</button>
+    <h1 id="Titulo" class="Destaque" onmouseleave="emiteError()" onmouseenter="emiteEnter()" onclick="alteraH1()">Emite error</h1>
+    <p>
+        <input onkeyup="calculaTabuada(this.value)">
+    </p>
+
+    <div id="tabuada" style="padding: 50px;"></div>
+
+    <script type="text/javascript">
+
+        const nome = "Reginaldo";
+        const sobrenome = "Grellmann";
+        console.log(nome + " " + sobrenome);
+
+        function emiteAlerta() {
+            alert("você clicou em um botão");
+            console.log("a função emiteAlerta foi acionada");
+            console.error("mensagem de erro");
+            console.warn("Um erro que não é grave");
+            console.info("mensagem de informação");
+            console.table([555, 2222, 555]);
+
+        }
+
+        const emiteError = function () {
+            console.error("Isso é uma função em uma variável");
+        }
+
+        const emiteEnter = function () {
+            console.info("Teste enter");
+        }
+
+        //pegando elementos via JS
+        const alteraH1 = function () {
+            //const h1 = document.querySelector('.Destaque');
+            const h1 = document.querySelector('#Titulo');
+            h1.innerText = "Valor alterado";
+            //hi.innerHTML ="valor <br> Alterado";
+
+        }
+
+        const calculaTabuada = function (valor) {
+            const tabuada = document.querySelector("#tabuada");
+            tabuada.innerText = "";
+            for (i = 0; i <= 10; i++) {
+                tabuada.innerHTML += `<p>${i} x ${valor} = ${i * valor} </p>`;
+
+            }
+        }
+        
+
+    </script>
+
+
+
+</body>
+
+</html>
