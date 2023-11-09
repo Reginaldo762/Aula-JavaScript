@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {
+            align-items: center;
+            text-align: center;
+            padding: 1px;
+        }
+        button{
+            padding: 5px;
+
+        }
+
+
+    </style>
+    <div style="height: 150px; width: 200px;background-color: aquamarine;align-items: center;">
+    <form>
+        <label>X</label>
+        <input type="number" name = "number_x">
+        <br>
+        <label>Y</label>
+        <input type="number" name = "number_y">
+        <br>
+        <button type="button" onclick="bt_soma(this)">+</button>
+        <button type="button" onclick="bt_subtrai(this)">-</button>
+        <button type="button" onclick="bt_multiplicar(this)">X</button>
+        <button type="button" onclick="bt_divisao(this)">/</button>
+        <button type="button" onclick="bt_limpar(this)">Limpar</button>
+        <button type="button" onclick="bt_resto(this)">Resto</button>
+        <button type="button" onclick="bt_potencia(this)">Potência</button>
+
+    </form>
+    <p id="resultado"></p>
+    <script src ="./js/math.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        const bt_soma = function(element){
+            const number_x = document.querySelector('input[name= "number_x"]').value;
+            const number_y = document.querySelector('input[name = "number_y"]').value;
+            document.querySelector('#resultado').innerText = soma
+            (number_x, number_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor ="white";
+            element.style.borderRadius= "30%"
+        }
+
+        const bt_subtrai = function(element){
+            const number_x = document.querySelector('input[name= "number_x"]').value;
+            const number_y = document.querySelector('input[name = "number_y"]').value;
+            document.querySelector('#resultado').innerText = subtracao
+            (number_x, number_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor ="white";
+            element.style.borderRadius= "30%"
+        }
+        const bt_multiplicar = function(element){
+            const number_x = document.querySelector('input[name= "number_x"]').value;
+            const number_y = document.querySelector('input[name = "number_y"]').value;
+            document.querySelector('#resultado').innerText = multiplicacao
+            (number_x, number_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor ="white";
+            element.style.borderRadius= "30%"
+        }
+        const bt_divisao = function(element){
+            const number_x = document.querySelector('input[name= "number_x"]').value;
+            const number_y = document.querySelector('input[name = "number_y"]').value;
+            document.querySelector('#resultado').innerText = divisao
+            (number_x, number_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor ="white";
+            element.style.borderRadius= "30%"
+        }
+        const bt_limpar = function(element){
+            document.querySelector('input[name= "number_x"]').value = "";
+            document.querySelector('input[name = "number_y"]').value = "";
+            document.querySelector('#resultado').innerText = "";
+            
+            const botoes = document.querySelectorAll('button');
+            for(botao of botoes){
+                botao.style.color = "buttontext";
+                botao.style.backgroundColor = "buttonface";
+                botao.style.borderRadius = "2px";
+
+            }
+        }
+        const bt_resto = function(element){
+            const number_x = document.querySelector('input[name= "number_x"]').value;
+            const number_y = document.querySelector('input[name = "number_y"]').value;
+            document.querySelector('#resultado').innerText = resto
+            (number_x, number_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor ="white";
+            element.style.borderRadius= "30%"
+        }
+        const bt_potencia = function(element){
+            const number_x = document.querySelector('input[name= "number_x"]').value;
+            const number_y = document.querySelector('input[name = "number_y"]').value;
+            document.querySelector('#resultado').innerText = potencia
+            (number_x, number_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor ="white";
+            element.style.borderRadius= "30%"
+        }
+        
+        
+    </script>
+    </div>
+</body>
+</html>
